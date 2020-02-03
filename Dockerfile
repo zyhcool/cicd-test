@@ -2,11 +2,11 @@
 FROM node:lts-alpine3.9
 
 # 在容器中创建一个目录
-RUN mkdir -p /usr/src/travis-test/
+RUN mkdir -p /usr/src/cicd-test/
 
-WORKDIR /usr/src/travis-test/
+WORKDIR /usr/src/cicd-test/
 
-COPY . /usr/src/travis-test/
+COPY . /usr/src/cicd-test/
 
 RUN npm install
 
