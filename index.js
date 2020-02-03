@@ -14,6 +14,6 @@ router.get('/', async (ctx, next) => {
 
 
 app.use(router.routes(), router.allowedMethods());
-app.listen(3000, () => {
-    console.log('listen in 3000 ...')
+app.listen(4000, () => {
+    console.log('listen in 4000 ...')
 })
