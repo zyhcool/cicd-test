@@ -3,9 +3,9 @@ const KoaRouter = require('koa-router');
 
 const publishTime = new Date().toLocaleString();
 
-const app = new Koa();
+let app = new Koa();
 const router = KoaRouter();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 router.get('/', async (ctx, next) => {
     console.log(`hit ${port}`);
     ctx.body = {
@@ -16,6 +16,9 @@ router.get('/', async (ctx, next) => {
 })
 
 app.use(router.routes(), router.allowedMethods());
-app.listen(port, () => {
+
+app = app.listen(port, () => {
     console.log(`listen in ${port} ...`)
-})
+
+});
+module.exports = app;
