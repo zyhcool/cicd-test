@@ -16,3 +16,4 @@ script:
 
 after_success:
   - docker push zyhcool/cicdtest:latest
+  
