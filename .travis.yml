@@ -15,5 +15,5 @@ script:
   - docker build -t zyhcool/travistest .
 
 after_success:
-  - docker push zyhcool/cicdtest:latest
+  - docker push zyhcool/travistest:latest
   
