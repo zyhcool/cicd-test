@@ -1,0 +1,13 @@
+# 单体部署
+version: '3.7'
+services:
+  web:
+    build: .
+    image: gcp
+    ports:
+      - 4000:4000
+    networks:
+      - gcp-web-net
+networks:
+  gcp-web-net:
+    driver: bridge
