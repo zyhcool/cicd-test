@@ -14,3 +14,13 @@ jobs:
     - uses: actions/checkout@main
     - name: Build the Docker image
       run: docker build -t cicd-test .
+    - name: Deploy to Docker Host
+      uses: wshihadeh/docker-deployment-action@v1
+      with:
+        remote_docker_host: root@47.93.236.248
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+        deployment_mode: docker-compose
+        args: up -d
+        docker_prune: 'true'
+        pull_images_first: 'true'
