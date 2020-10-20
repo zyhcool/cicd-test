@@ -3,11 +3,11 @@ version: '3.7'
 services:
   web:
     build: .
-    image: gcp
+    image: cicd-test
     ports:
       - 4000:4000
     networks:
-      - gcp-web-net
+      - cicd-web-net
 networks:
-  gcp-web-net:
+  cicd-web-net:
     driver: bridge
