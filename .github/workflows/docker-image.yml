@@ -17,9 +17,11 @@ jobs:
     - name: Deploy to Docker Host
       uses: wshihadeh/docker-deployment-action@v1
       with:
-        remote_docker_host: root@175.24.134.18
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+        remote_docker_host: root@47.93.236.248
+        ssh_private_key: ${{ secrets.ALI_SSH_PRIVATE_KEY }}
+        ssh_public_key: ${{ secrets.ALI_SSH_PUBLIC_KEY }}
+        deploy_path: /var/projects/cicd-test
+        stack_file_name: docker-compose.yml
         deployment_mode: docker-compose
         args: up -d
         docker_prune: 'true'
