@@ -6,7 +6,7 @@ node {
 
     stage('Build') {
         echo "Building..."
-        sh "docker run -t cicd-test ."
+        sh "docker build -t cicd-test ."
     }
 
     stage('Deploy-Testing-Env') {
