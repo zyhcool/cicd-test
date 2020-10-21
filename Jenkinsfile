@@ -1,14 +1,16 @@
 node {
-   stage('prepare') {
-       echo 'prepare step1'
-       echo 'prepare step2'
-   }
-   stage('build') {
-       echo 'build step1'
-       echo 'build step2'
-   }
-   stage('deploy') {
-       echo 'deploy step1'
-       echo 'deploy step2'
-   }
+
+    stage("Prepare"){
+        echo "Preparing..."
+    }
+
+    stage('Build') {
+        echo "Building..."
+        sh "docker run -t cicd-test ."
+    }
+
+    stage('Deploy-Testing-Env') {
+        echo "Deploying..."
+        sh "docker-compose up -d"
+    }
 }
