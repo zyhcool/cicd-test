@@ -11,6 +11,7 @@ router.get('/', async (ctx, next) => {
     ctx.body = {
         message: `hit ${port}`,
         publishTime,
+        version: '0.0.1'
 
     };
     ctx.status = 200;
