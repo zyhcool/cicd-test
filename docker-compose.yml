@@ -6,7 +6,7 @@ services:
     image: cicd-test
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/var/authfile/auth.json
-    volumns:
+    volumes:
       - /var/authfile/auth.json:/var/authfile/auth.json
     ports:
       - 4000:4000
