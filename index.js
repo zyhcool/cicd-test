@@ -11,8 +11,8 @@ router.get('/', async (ctx, next) => {
     ctx.body = {
         message: `hit ${port}`,
         publishTime,
-        version: '0.0.3'
-
+        version: '0.0.4',
+        file: process.env.GOOGLE_APPLICATION_CREDENTIALS
     };
     ctx.status = 200;
 })
