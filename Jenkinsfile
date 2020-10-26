@@ -2,13 +2,14 @@ node {
 
     stage("Prepare"){
         echo "Preparing..."
-        checkout scm
+        checkout scm // 代码签出
         echo "Prepare success"
     }
 
     stage('Build') {
         echo "Building..."
         sh "docker build -t cicd-test ."
+        sh "docker images | grep none | awk '{print $3}' | xargs docker rmi" // 删除标签为none的镜像
         echo "Build success"
     }
 
